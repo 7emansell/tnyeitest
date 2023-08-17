@@ -2,12 +2,13 @@ const express = require('express');
 const { nabokov } = require('../db');
 const router = express.Router();
 
+//come back to this (authors subbed for nabakov)
 function create_router(db) {
-  router.get('/nabokov', async (req, res) => {
-    const nabokov_books = await nabokov(db);
-    res.json(nabokov_books);
+  router.get('/authors', async (req, res) => {
+    const authors_books = await authors(db);
+    res.json(authors_books);
   });
-  
+
   router.get('/', (req, res) => {
     res.send('hello, world');
   });
