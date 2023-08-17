@@ -25,8 +25,9 @@ async function stop_db(db) {
   });
 }
 
-async function nabokov(db) {
-  const sql = `SELECT * FROM nabokov`;
+//Come back to this
+async function authors(db) {
+  const sql = `SELECT * FROM authors`;
 
   return new Promise((resolve, reject) => {
     db.all(sql, (err, rows) => {
@@ -41,5 +42,5 @@ async function nabokov(db) {
 module.exports = {
   start_db,
   stop_db,
-  nabokov,
+  authors,
 }
