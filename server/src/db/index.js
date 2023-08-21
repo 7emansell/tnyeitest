@@ -25,22 +25,49 @@ async function stop_db(db) {
   });
 }
 
-//Come back to this
-async function authors(db) {
-  const sql = `SELECT * FROM authors`;
-
+async function get_authors(db) {
   return new Promise((resolve, reject) => {
-    db.all(sql, (err, rows) => {
+    db.all('SELECT * FROM authors', (err, rows) => {
       if (err) {
         reject(err);
+        return;
       }
       resolve(rows);
-    })
+    });
+  });
+}
+
+async function get_books(db) {
+  return new Promise((resolve, reject) => {
+    db.all('SELECT * FROM books', (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve(rows);
+    });
+  });
+}
+
+async function get_book_by_isbn(isbn, db) {
+  return new Promise((resolve, reject) => {
+    const query = 'SELECT * FROM books WHERE isbn = ?';
+    db.all(query, [isbn], (error, rows) => {
+      if (error) {
+        reject(error);
+      } else {
+        // Return 1st row (isbn is unique)
+        const book = rows.length > 0 ? rows[0] : null;
+        resolve(book);
+      }
+    });
   });
 }
 
 module.exports = {
   start_db,
   stop_db,
-  authors,
+  get_authors,
+  get_books,
+  get_book_by_isbn
 }
