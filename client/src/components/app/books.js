@@ -3,10 +3,21 @@ import { Link } from 'react-router-dom';
 
 function Books() {
     const [books, setBooks] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredBooks, setFilteredBooks] = useState([]);
 
     useEffect(() => {
         fetchBooks();
     }, []);
+
+    useEffect(() => {
+        const filtered = books.filter(
+            book =>
+                book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                book.author.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredBooks(filtered);
+    }, [searchTerm, books]);
 
     const fetchBooks = async () => {
         try {
@@ -14,15 +25,21 @@ function Books() {
             const data = await response.json();
             setBooks(data);
         } catch (error) {
-            console.error('Error fetching books:', error);
+            console.error('Could not fetch books:', error);
         }
     };
 
     return (
         <div>
             <h1>Book List</h1>
+            <input
+                type="text"
+                placeholder="Search by title, author"
+                value={searchTerm}
+                onChange={event => setSearchTerm(event.target.value)}
+            />
             <ul>
-                {books.map(book => (
+                {filteredBooks.map(book => (
                     <li key={book.isbn}>
                         <Link to={`/books/${book.isbn}`}>{book.title}</Link>
                     </li>
