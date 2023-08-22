@@ -1,14 +1,14 @@
 DROP TABLE IF EXISTS authors;
 
 CREATE TABLE authors (
-  author                    TEXT,
+  name                    TEXT,
   author_date_of_birth      DATE,
   author_date_of_death      DATE
 );
 
 -- Nabokov
 INSERT INTO authors (
-  author,
+  name,
   author_date_of_birth,
   author_date_of_death  
 ) VALUES (
@@ -19,7 +19,7 @@ INSERT INTO authors (
 
 -- Smith
 INSERT INTO authors (
-  author,
+  name,
   author_date_of_birth,
   author_date_of_death  
 ) VALUES (
@@ -30,7 +30,7 @@ INSERT INTO authors (
 
 -- Wallace
 INSERT INTO authors (
-  author,
+  name,
   author_date_of_birth,
   author_date_of_death  
 ) VALUES (
