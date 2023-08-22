@@ -31,17 +31,17 @@ function Books() {
     };
 
     return (
-        <div className="w-[1280px] h-[832px] p-[50px] bg-neutral-50 flex-col justify-start items-start gap-[50px] inline-flex">
-            <div className="w-[1180px] h-[43px] justify-center items-center gap-2.5 inline-flex">
-                <div className="w-[1180px] h-[43px] pl-3 pr-[892px] py-3 bg-white border border-black justify-start items-center flex">
-                    <div className="w-[276px] h-[19px] justify-center items-center inline-flex">
+        <div className="w-full md:w-[1280px] h-[832px] p-4 md:p-[50px] bg-neutral-50 flex-col justify-start items-start gap-6 md:gap-6 inline-flex">
+            <div className="w-full md:w-[1180px] h-[43px] justify-center items-center gap-2.5 inline-flex">
+                <div className="w-full md:w-[1180px] h-[43px] md:pl-3 md:pr-[892px] py-3 bg-white border border-black justify-start items-center flex">
+                    <div className="w-full md:w-[276px] h-[19px] justify-center items-center inline-flex">
                         <div className="w-full text-zinc-500 text-base font-normal leading-normal">
                             <input
                                 type="text"
                                 placeholder="Search by title, author"
                                 value={searchTerm}
                                 onChange={event => setSearchTerm(event.target.value)}
-                                class="w-full focus:outline-none text-black"
+                                className="w-full focus:outline-none text-black p-2"
                             />
                         </div>
                     </div>
@@ -50,19 +50,21 @@ function Books() {
             <ul>
                 {filteredBooks.map(book => (
                     <li key={book.isbn}>
-                        <div className={`w-[1180px] h-[71px] py-[5px] border-t ${book.fiction ? 'border-teal-600' : 'border-pink-600'} flex-col justify-center items-center inline-flex`}>
-                            <div className="self-stretch text-black text-4xl font-medium leading-[43.20px]">
-                                <Link to={`/books/${book.isbn}`}>{book.title}</Link>
+                        <Link to={`/books/${book.isbn}`}>
+                            <div className={`w-full md:w-[1180px] ${book.fiction ? 'border-teal-600' : 'border-pink-600'} flex-col p-4 md:p-2 border-t md:flex md:flex-row md:justify-between md:items-center`}>
+                                <div className="md:w-3/4 md:mr-4">
+                                    <span className="text-lg md:text-black md:text-4xl font-medium md:leading-[43.20px] whitespace-normal">{book.title}</span>
+                                    <div className="text-md md:text-black md:text-xs md:font-medium md:leading-[18px] whitespace-normal">{book.author}</div>
+                                </div>
+                                <div className="text-md md:w-1/4 md:text-right md:text-xs md:font-medium md:leading-[18px]">
+                                    {book.year}
+                                </div>
                             </div>
-                            <div className="self-stretch justify-between items-start inline-flex">
-                                <div className="text-black text-xs font-medium leading-[18px]">{book.author}</div>
-                                <div className="text-right text-black text-xs font-medium leading-[18px]">{book.year}</div>
-                            </div>
-                        </div>
+                        </Link>
                     </li>
                 ))}
             </ul>
-        </div >
+        </div>
     );
 }
 
