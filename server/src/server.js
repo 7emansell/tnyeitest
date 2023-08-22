@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { create_router } = require('./router');
 
-const NODE_PORT = process.env.NODE_PORT || 3000;
+const NODE_PORT = process.env.NODE_PORT || 3001;
 
 async function start_server(db) {
   const app = express();
