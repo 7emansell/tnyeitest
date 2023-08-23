@@ -31,15 +31,25 @@ and the client:
 npm run start:client
 ```
 
-(When I tested a fresh copy, I once had to run
+(\*\*When I tested a fresh copy, I once had to run
 
 ```
 npm install
 ```
 
-again in the client terminal for all dependencies to show up (?).)
+again in the client terminal for all dependencies to show up)
 
 The server should be accessible at [http://localhost:3001](http://localhost:3001) and the client should be accessible at [http://localhost:3000](http://localhost:3000).
+
+### Testing
+
+Run
+
+```
+npx jest
+```
+
+to run the 2 test suites (checking that correct data is fetched, search works, and components render correctly for authors and books).
 
 ### Required tasks completed
 
