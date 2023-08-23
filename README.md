@@ -49,14 +49,14 @@ To the back-end:
 
 - [ ] Add a POST route that creates a book
 - [ ] Add a PUT route to update a book
-- [x] Add any other sensible collection or individual entity routes
+- [x] Add any other sensible collection or individual entity routes (all 'authors' routes)
 - [x] Add tests
 
 To the front-end:
 
 - [x] Make the design responsive across different screen sizes
 - [ ] Add any relevant `<meta>` tags to the `<head>`
-- [x] Add tests
+- [x] Add tests (Jest)
 
 ## Resources
 
