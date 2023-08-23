@@ -53,7 +53,7 @@ function Books() {
                         <Link to={`/books/${book.isbn}`}>
                             <div className={`w-full md:w-[1180px] ${book.fiction ? 'border-teal-600' : 'border-pink-600'} flex-col p-4 md:p-2 border-t md:flex md:flex-row md:justify-between md:items-center`}>
                                 <div className="md:w-3/4 md:mr-4">
-                                    <span className="text-lg md:text-black md:text-4xl font-medium md:leading-[43.20px] whitespace-normal">{book.title}</span>
+                                    <span className={`text-lg md:text-black md:text-4xl font-medium md:leading-[43.20px] whitespace-normal ${book.fiction ? 'hover:text-teal-600' : 'hover:text-pink-600'}`}> {book.title}</span>
                                     <div className="text-md md:text-black md:text-xs md:font-medium md:leading-[18px] whitespace-normal">{book.author}</div>
                                 </div>
                                 <div className="text-md md:w-1/4 md:text-right md:text-xs md:font-medium md:leading-[18px]">
@@ -64,7 +64,7 @@ function Books() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </div >
     );
 }
 

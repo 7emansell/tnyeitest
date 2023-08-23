@@ -11,8 +11,8 @@ function App() {
     <Router>
       <div className="w-full h-[832px] p-[50px] bg-neutral-50 flex-col justify-start items-start gap-2.5 inline-flex">
         <div className="self-stretch justify-center items-center inline-flex">
-          <div className="text-black text-4xl font-light leading-[54px] hover:text-teal-600"><Link to={`/books/`}>[books]</Link></div>
-          <div className="text-black text-4xl font-light leading-[54px] hover:text-teal-600"><Link to={`/authors/`}>[authors]</Link></div>
+          <div className="text-black text-4xl font-light leading-[54px] hover:text-gray-600"><Link to={`/books/`}>[books]</Link></div>
+          <div className="text-black text-4xl font-light leading-[54px] hover:text-gray-600"><Link to={`/authors/`}>[authors]</Link></div>
         </div>
         <div className="relative">
           <Routes>

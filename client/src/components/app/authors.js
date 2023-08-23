@@ -53,7 +53,7 @@ function Authors() {
                 {filteredAuthors.map(author => (
                     <li key={author.author}>
                         <div class={`w-[1180px] h-[71px] py-[5px] border-tflex-col justify-start items-start inline-flex`}>
-                            <div class="self-stretch text-black text-4xl font-medium leading-[43.20px]">
+                            <div class="self-stretch text-black text-4xl font-medium leading-[43.20px] hover:text-gray-600">
                                 <Link to={`/authors/${createAuthorURLName(author.name)}`}>{author.name}</Link>
                             </div>
                         </div>

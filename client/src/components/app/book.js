@@ -37,7 +37,7 @@ function Book() {
                         <div class="text-black text-xs font-normal uppercase leading-none tracking-wide">Author</div>
                     </div>
                     <div class="justify-center items-center gap-2.5 inline-flex">
-                        <div class="text-black text-lg font-medium leading-relaxed"><Link to={`/authors/${createAuthorURLName(book.author)}`}>{book.author}</Link></div>
+                        <div class="text-black text-lg font-medium leading-relaxed hover:text-gray-600"><Link to={`/authors/${createAuthorURLName(book.author)}`}>{book.author}</Link></div>
                     </div>
                 </div>
 

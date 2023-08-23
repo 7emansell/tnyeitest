@@ -71,7 +71,7 @@ function Author() {
                         {booksByAuthor.map(book => (
                             <li>
                                 <div class="flex-col justify-start items-start gap-5 inline-flex">
-                                    <div class="text-black text-2xl font-medium leading-10"><Link to={`/books/${book.isbn}`}>{book.title}</Link></div>
+                                    <div class={`text-black text-2xl font-medium leading-10 ${book.fiction ? 'hover:text-teal-600' : 'hover:text-pink-600'}`}><Link to={`/books/${book.isbn}`}>{book.title}</Link></div>
                                 </div>
                             </li>
                         ))}
